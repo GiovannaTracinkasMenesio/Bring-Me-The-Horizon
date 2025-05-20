@@ -1,2 +1,0 @@
-(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["63470"],{71868:function(_,n,t){_.exports={locale:"pt-BR",i18nStrings:void 0,plural:t(282011)}},282011:function(_){_.exports=function(_){return+_>1}}}]);
-//# sourceMappingURL=https://sm.pinimg.com/webapp/locale-pt_BR-data-js-0a6335fff1c5d106.mjs.map

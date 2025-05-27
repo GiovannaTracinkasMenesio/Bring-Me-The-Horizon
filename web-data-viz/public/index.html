@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sortear Album e Música| Bring Me The Horizon BR </title>
+    <link rel="icon" type="image/png" href="./images/1810034-Photoroom.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body_curiosidades">
+    <header>
+        <img src="./images/heart love Sticker by Bring Me The Horizon (1).gif" alt="" class="logo">
+        <h4 class="logo_texto">Bring Me The Horizon Brasil</h4>
+    </header>
+    <div class="div_sorteioalbum">
+        <button onclick="sortearAlbum()">Sortear Album</button>
+        <div id="img_album_sorteado">
+            <h2 id="titulo"></h2>
+            <div class="album_img" id="img_div"></div>
+        </div>
+    </div>
+    <div class="div_sorteioMusica">
+        <button onclick="sortearMusica()">Sortear Música</button>
+        <div id="video_musica_sorteada"></div>
+    </div>
+    <div class="footer"></div>
+    </div>
+</body>
+<script>
+    function sortearAlbum() {
+        var albuns = [
+            { título: 'Sempiternal', imagem: "./images/sempiternal.jpeg" },
+            { título: 'Amo', imagem: "./images/amo.jpeg" },
+            { título: 'Thats The Spirit', imagem: "./images/thatsTheSpirit.jpg" },
+            { título: 'Post Human: Nex Gen', imagem: "./images/nextgen2.jpeg" },
+            { título: 'Post Human: Survival Horror', imagem: "./images/survivalHorror.jpg" },
+            { título: 'Count Your Blessings', imagem: "./images/countYourBlessings.jpeg" },
+            { título: 'Suicide Season', imagem: "./images/suicideSeason.jpeg" },
+            { título: 'There Is A Hell, Believe Me Ive Seen It. There Is A Heaven, Lets Keep It A Secret', imagem: "./images/theresAHell.jpg" }
+        ]
+        var albumAleatorio = Math.floor(Math.random() * albuns.length);
+        var albumSorteado = albuns[albumAleatorio]
+        titulo.innerHTML = albumSorteado.título
+        img_div.innerHTML =  `<img src="${albumSorteado.imagem}" alt="${albumSorteado.titulo}">`
+
+
+    }
+    function sortearMusica() {
+
+    }
+</script>

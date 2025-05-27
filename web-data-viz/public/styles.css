@@ -28,9 +28,9 @@ body {
   width: 100vw;
 }
 
-.div_login {
+.div_img {
   background-image: url(./images/SRmgTmx.jpg);
-  width: 60vw;
+  width: 75vw;
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -47,8 +47,8 @@ body {
   display: flex;
   font-family: "Roboto Flex", sans-serif;
   padding: 30px;
-  width: 40vw;
-  height: 100vh;
+  width: 25vw;
+  height: 90vh;
   flex-direction: column;
   text-align: center;
   align-items: center;
@@ -58,7 +58,7 @@ body {
 .input {
   background-color: #c2c2c2;
   border-radius: 10px;
-  width: 400px;
+  width: 350px;
 }
 
 .caixa_input {

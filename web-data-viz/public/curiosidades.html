@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,19 +39,42 @@
       <button onclick="voltar()">⬅️</button>
     </div>
   </div>
-  <div class=" footer"></div>
+  <div class="footer"></div>
   </div>
 </body>
 <script>
-  function botoes() {
+    var slideAtual = 0;
+    const slides = document.querySelectorAll('.slide');
 
+    function mostrarSlide(index) {
+    if (index >= slides.length) {
+      slideAtual = 0;
+    } else if (index < 0) {
+      slideAtual = slides.length - 1;
+    } else {
+      slideAtual = index;
+    }
+
+    // Esconde todos os slides
+    slides.forEach((slide, i) => {
+      slide.style.display = i === slideAtual ? 'block' : 'none';
+    });
   }
-  function avancar(){
 
-  } 
-  function voltar(){
-
+    function avancar() {
+      mostrarSlide(slideAtual + 1);
   }
+
+    function voltar() {
+      mostrarSlide(slideAtual - 1);
+  }
+
+    // Mostra o primeiro slide ao carregar a página
+    window.onload = function () {
+      mostrarSlide(slideAtual);
+  }
+</script>
+
 </script>
 
 </html>

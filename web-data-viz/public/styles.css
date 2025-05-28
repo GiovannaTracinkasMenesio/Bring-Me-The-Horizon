@@ -209,3 +209,28 @@ z-index: 1;
 .option:hover {
   background-color: #444;
 }
+.botao_index{
+font-family: "Roboto Flex", sans-serif;
+  font-size: medium;
+  font-weight: 500;
+  background-color: #000000;
+  transition: background-color 0.8s, color 0.8s;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.imagem_album{
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.quadrado_img{
+  height: 450px;
+  width: 400px;
+  background-color: #e6e6e6;
+  border-radius: 20px;
+}

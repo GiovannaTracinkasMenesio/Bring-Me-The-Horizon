@@ -43,7 +43,6 @@ values ('Sempiternal', 'Metalcore' , '2013-04-01'),
 desc musica;
 insert into musica (titulo, fkAlbum)
 values  ('Pray for Plagues', 8),
-		('Tell Slater Not to Wash His Dick', 8),
         ('For Stevie Wonders Eyes Only (Braille)', 8),
 		('A Lot Like Vegas', 8),
 		('Black & Blue', 8),
@@ -131,7 +130,7 @@ values  ('Pray for Plagues', 8),
         ('1x1', 3),
         ('Ludens', 3),
         ('One Day the Only Butterflies Left Will Be in Your Chest as You March Towards Your Death', 3);
-        
+
         select 
         m.titulo, a.titulo as nome_album
         from musica m 

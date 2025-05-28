@@ -181,18 +181,20 @@ li {
   width: 100%;
 }
 
-.carrossel_img{
+.carrossel_img {
   filter: grayscale(100%);
   height: 100%;
   width: 100%;
 }
-.carrossel_img::after{
-background-image: url(./images/texture.png);
-opacity: 0.10;
-width: 100%;
-height: 100%;
-z-index: 1;
+
+.carrossel_img::after {
+  background-image: url(./images/texture.png);
+  opacity: 0.10;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
+
 .question {
   margin-top: 20px;
 }
@@ -209,8 +211,9 @@ z-index: 1;
 .option:hover {
   background-color: #444;
 }
-.botao_index{
-font-family: "Roboto Flex", sans-serif;
+
+.botao_index {
+  font-family: "Roboto Flex", sans-serif;
   font-size: medium;
   font-weight: 500;
   background-color: #000000;
@@ -220,7 +223,8 @@ font-family: "Roboto Flex", sans-serif;
   border-radius: 15px;
   cursor: pointer;
 }
-.imagem_album{
+
+.imagem_album {
   width: 350px;
   height: 350px;
   border-radius: 10px;
@@ -228,9 +232,26 @@ font-family: "Roboto Flex", sans-serif;
   margin-top: 20px;
   margin-left: 25px;
 }
-.quadrado_img{
+
+.quadrado_img {
   height: 450px;
   width: 400px;
   background-color: #e6e6e6;
   border-radius: 20px;
+}
+
+.div_mae {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: row;
+}
+
+.div_sorteioalbum {
+  width: 50vw;
+  height: 100vh;
+}
+.album_container_escondido{
+   width: 50vw;
+  height: 100vh;
 }

@@ -13,21 +13,22 @@
     <header>
         <img src="./images/heart love Sticker by Bring Me The Horizon (1).gif" alt="" class="logo">
         <h4 class="logo_texto">Bring Me The Horizon Brasil</h4>
-            <a href="cadastro.html">Cadastre-se</a>
-            <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastre-se</a>
+        <a href="login.html">Login</a>
     </header>
-    <div class="div_sorteioalbum">
-        <button onclick="sortearAlbum()" class="botao_index">Sortear Album</button>
-        <div id="img_album_sorteado">
-            <h2 id="titulo"></h2>
-            <div class="quadrado_img" id="img_div">
-                
+    <div class="div_mae">
+        <div class="div_sorteioalbum">
+            <button onclick="sortearAlbum()" class="botao_index">Sortear Album</button>
+            <div id="album_container" class="album_container_escondido">
+                <h2 id="titulo"></h2>
+                <div class="quadrado_img" id="img_div">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="div_sorteioMusica">
-        <button onclick="sortearMusica()" class="botao_index">Sortear Música</button>
-        <div id="video_musica_sorteada"></div>
+        <div class="div_sorteioMusica">
+            <button onclick="sortearMusica()" class="botao_index">Sortear Música</button>
+            <div id="video_musica_sorteada"></div>
+        </div>
     </div>
     <div class="footer"></div>
     </div>
@@ -53,16 +54,16 @@
     }
     function sortearMusica() {
         var musicas = [
-            {título: 'Dont Go', video: 'https://www.youtube.com/embed/YzStpP8JkDM'},
-            {título: 'Seen It All Before', video: 'https://www.youtube.com/embed/Q-_JIH466rg'},
-            {título: 'The House Of Wolves', video: 'https://www.youtube.com/embed/TN4GjxT1NDQ'},
-            {título: 'Blessed With A Curse', video: 'https://www.youtube.com/embed/okCcL8daFAg'},
-            {título: 'Crooked Young', video: 'https://www.youtube.com/embed/niGZ1nrVwqE'},
-            {título: 'Antivist', video: 'https://www.youtube.com/embed/1rMyAUqWV3Y'},
-            {título: 'Empire', video: 'https://www.youtube.com/embed/sA5hj7wuJLQ'}
-    ]
-    var videoAleatorio = Math.floor(Math.random() * musicas.length);
-    var musicaSorteada = musicas[videoAleatorio]
-    video_musica_sorteada.innerHTML =  `<iframe src="${musicaSorteada.video}" frameborder="0" width="560" height="315"></iframe>`
+            { título: 'Dont Go', video: 'https://www.youtube.com/embed/YzStpP8JkDM' },
+            { título: 'Seen It All Before', video: 'https://www.youtube.com/embed/Q-_JIH466rg' },
+            { título: 'The House Of Wolves', video: 'https://www.youtube.com/embed/TN4GjxT1NDQ' },
+            { título: 'Blessed With A Curse', video: 'https://www.youtube.com/embed/okCcL8daFAg' },
+            { título: 'Crooked Young', video: 'https://www.youtube.com/embed/niGZ1nrVwqE' },
+            { título: 'Antivist', video: 'https://www.youtube.com/embed/1rMyAUqWV3Y' },
+            { título: 'Empire', video: 'https://www.youtube.com/embed/sA5hj7wuJLQ' }
+        ]
+        var videoAleatorio = Math.floor(Math.random() * musicas.length);
+        var musicaSorteada = musicas[videoAleatorio]
+        video_musica_sorteada.innerHTML = `<iframe src="${musicaSorteada.video}" frameborder="0" width="560" height="315"></iframe>`
     }
 </script>

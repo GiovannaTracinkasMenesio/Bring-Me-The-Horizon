@@ -17,10 +17,12 @@
       <h1>Cadastre-se</h1>
       <p>Preencha o formulário</p>
       <div class="caixa_input">
+        <input type="text" id="ipt_cadastro_username" placeholder="Username" required class="input">
         <input type="text" id="ipt_cadastro_email" placeholder="Email" required class="input">
         <input type="password" id="ipt_cadastro_senha" placeholder="Senha" required class="input">
         <br>
         <button onclick="cadastrar()" class="botao_cadastro">CADASTRAR</button>
+        <a href="login.html">Já possui cadastro?</a>
       </div>
     </div>
   </div>
@@ -30,16 +32,17 @@
   function cadastrar() {
     var senha = ipt_cadastro_senha.value;
     var email = ipt_cadastro_email.value;
-    if (senha == '' || email == '') {
+    var username = ipt_cadastro_username.value;
+    if (senha == '' || email == '' || username == '') {
       alert('Todos os campos precisam estar preenchidos para concluir o cadastro')
     } else if (!email.includes('@') || !email.includes('.com')) {
-       alert('Email precisa conter @ e .com')
-    } else if(senha.length < 8){
+      alert('Email precisa conter @ e .com')
+    } else if (senha.length < 8) {
       alert('Senha precisa conter no mínimo 8 caracteres')
     }
     else {
       alert('Cadastro realizado com sucesso')
-       window.location = "./login.html";
+      window.location = "./login.html";
     }
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -49,6 +52,7 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
+        userServer: username,
         emailServer: email,
         senhaServer: senha
       }),

@@ -16,6 +16,8 @@
         <a href="login.html">Login</a>
     </header>
     <h1>Dashboard</h1>
+    <canvas id="Albuns"></canvas>
+    <canvas id="Musicas"></canvas>
     <script>
       function exibirAquariosDoUsuario() {
         var aquarios = JSON.parse(sessionStorage.AQUARIOS);
@@ -135,10 +137,10 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Umidade',
+                labels:[ 'Sempiternal', 'Amo', 'Thats The Spirit', 'Suicide Season', 'Theres a Hell...', 'Post Human: NeX GEn', 'Post Human: Survival Horror', 'Count Your Blessings'],
                 data: [],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
             {
@@ -172,7 +174,7 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'line',
+            type: 'doughnut',
             data: dados,
         };
 

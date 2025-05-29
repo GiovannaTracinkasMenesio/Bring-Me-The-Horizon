@@ -1,5 +1,4 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -21,17 +20,17 @@ function autenticar(req, res) {
                         console.log(resultadoAutenticar);
 
                         usuarioModel.autenticar(email, senha)
-                             .then((resultadoUsuario) => {
-                                 if (resultadoUsuario.length > 0) {
-                                     res.json({
-                                         id: resultadoAutenticar[0].id,
-                                         email: resultadoAutenticar[0].email,               
-                                         senha: resultadoAutenticar[0].senha,
-                                     });
-                                 } else {
-                                     res.status(204).json({ usuario: [] });
-                                 }            
-                             })
+                            .then((resultadoUsuario) => {
+                                if (resultadoUsuario.length > 0) {
+                                    res.json({
+                                        id: resultadoAutenticar[0].id,
+                                        email: resultadoAutenticar[0].email,
+                                        senha: resultadoAutenticar[0].senha,
+                                    });
+                                } else {
+                                    res.status(204).json({ usuario: [] });
+                                }
+                            })
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("email e/ou senha inválido(s)");
                     } else {
@@ -51,18 +50,21 @@ function autenticar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var username = req.body.userServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
     // Faça as validações dos valores
-     if (email == undefined) {
+    if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    }  else {
+    } else if (username  == undefined) {
+        res.status(400).send("Seu username está undefined!");
+    } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(email, senha)
+        usuarioModel.cadastrar(username, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);

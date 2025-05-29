@@ -77,7 +77,7 @@
     function alterarTitulo(idAquario) {
         var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
         var descricao = JSON.parse(sessionStorage.AQUARIOS).find(item => item.id == idAquario).descricao;
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>" + descricao + "</span>"
+        tituloAquario.innerHTML = "Últimas votos de Temperatura e Umidade do <span style='color: #e6005a'>" + descricao + "</span>"
     }
 
     function exibirAquario(idAquario) {
@@ -117,7 +117,7 @@
     // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
     // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
 
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de votos.
     // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
     // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
 
@@ -131,7 +131,7 @@
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/votos/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -223,7 +223,7 @@
 
 
 
-        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/votos/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 

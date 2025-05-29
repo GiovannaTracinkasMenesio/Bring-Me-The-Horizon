@@ -8,7 +8,6 @@
     <link rel="icon" type="image/png" href="./images/1810034-Photoroom.png">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="body_curiosidades">
     <header>
         <img src="./images/heart love Sticker by Bring Me The Horizon (1).gif" alt="" class="logo">
@@ -36,18 +35,18 @@
 <script>
     function sortearAlbum() {
         var albuns = [
-            { título: 'Sempiternal', imagem: "./images/sempiternal.jpeg" },
-            { título: 'Amo', imagem: "./images/amo.jpeg" },
-            { título: 'Thats The Spirit', imagem: "./images/thatsTheSpirit.jpg" },
-            { título: 'Post Human: Nex Gen', imagem: "./images/nextgen2.jpeg" },
-            { título: 'Post Human: Survival Horror', imagem: "./images/survivalHorror.jpg" },
-            { título: 'Count Your Blessings', imagem: "./images/countYourBlessings.jpeg" },
-            { título: 'Suicide Season', imagem: "./images/suicideSeason.jpeg" },
-            { título: 'There Is A Hell, Believe Me Ive Seen It. There Is A Heaven, Lets Keep It A Secret', imagem: "./images/theresAHell.jpg" }
+            { título: 'Sempiternal', imagem: "./images/sempiternal.jpeg", descricao: "Sempiternal é o quarto álbum da banda, lançado em 1 de abril de 2013. O álbum conta com "},
+            { título: 'Amo', imagem: "./images/amo.jpeg", descricao: "" },
+            { título: 'Thats The Spirit', imagem: "./images/thatsTheSpirit.jpg", descricao: "" },
+            { título: 'Post Human: Nex Gen', imagem: "./images/nextgen2.jpeg", descricao: "" },
+            { título: 'Post Human: Survival Horror', imagem: "./images/survivalHorror.jpg", descricao: "" },
+            { título: 'Count Your Blessings', imagem: "./images/countYourBlessings.jpeg", descricao: "" },
+            { título: 'Suicide Season', imagem: "./images/suicideSeason.jpeg", descricao: "" },
+            { título: 'There Is A Hell, Believe Me Ive Seen It. There Is A Heaven, Lets Keep It A Secret', imagem: "./images/theresAHell.jpg", descricao: "" }
         ]
         var albumAleatorio = Math.floor(Math.random() * albuns.length);
         var albumSorteado = albuns[albumAleatorio]
-        titulo.innerHTML = albumSorteado.título
+        titulo.innerHTML = `Álbum: ${albumSorteado.título}`
         img_div.innerHTML = `<img src="${albumSorteado.imagem}" alt="${albumSorteado.titulo}" class="imagem_album">`
 
 

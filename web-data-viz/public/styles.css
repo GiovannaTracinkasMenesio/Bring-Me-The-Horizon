@@ -64,6 +64,7 @@ body {
 .caixa_input {
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .conteudo {
@@ -110,7 +111,7 @@ button {
 }
 
 .botao_cadastro:hover {
-  background-color: #ee2015;
+  background-color: #9f160f;
 }
 
 a {
@@ -174,12 +175,13 @@ li {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   border: 1px solid #000000;
 }
-.box{
- display: flex;
- flex-direction: row;
+
+.box {
+  display: flex;
+  flex-direction: row;
 }
 
-.curiosidades_img {  
+.curiosidades_img {
   height: 300px;
   width: 500px;
 }
@@ -213,7 +215,10 @@ li {
   width: 50vw;
   height: 100vh;
 }
-.album_container_escondido{
-   width: 50vw;
+
+.album_container_escondido {
+  width: 50vw;
   height: 100vh;
 }
+
+#a_cadastro {}

@@ -19,42 +19,111 @@
     <canvas id="Albuns"></canvas>
     <canvas id="Musicas"></canvas>
 </body>
-window.onload = function () {
-
-}
-
 <script>
-    fetch("/medidas/ultimas", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
+    window.onload = function () {
+        obterDadosGraficoAlbum()
 
-        if (resposta.ok) {
-            console.log(resposta);
+    }
+    function obterDadosGraficoAlbum() {
 
-            resposta.json().then(json => {
-                var tituloAlbum = []
-                var qtdVotosAlbum = []
-                for (var i = 0; i < json.length; i++) {
-                    tituloAlbum[i] = json[i].titulo; 
-                    qtdVotosAlbum[i] = json[i].qtdVotos;
+        fetch("/medidas/ultimas", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    var tituloAlbum = []
+                    var qtdVotosAlbum = []
+                    for (var i = 0; i < json.length; i++) {
+                        tituloAlbum[i] = json[i].Album_Favorito;
+                        qtdVotosAlbum[i] = json[i].votos;
+                    }
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    plotarGrafico(tituloAlbum, qtdVotosAlbum)
+
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+    function plotarGrafico(tituloAlbum, qtdVotosAlbum) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = tituloAlbum;
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                labels: 'titulo',
+                data: qtdVotosAlbum,
+                backgroundColor: ['rgb(75, 192, 192)',
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(80, 192, 192)',
+                    'rgb(, 99, 132)',
+                ],
+                tension: 0.1
+            }]
+        };
+        console.log(labels)
+        console.log(qtdVotosAlbum)
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGraficoAlbum" e passados para "plotarGrafico":')
+        
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        /*    for (i = 0; i < resposta.length; i++) {
+                var registro = resposta[i];
+                labels.push(registro.momento_grafico);
+                dados.datasets[0].data.push(registro.umidade);
+                dados.datasets[1].data.push(registro.temperatura);
+            }
+    
+            console.log('----------------------------------------------')
+            console.log('O gráfico será plotado com os respectivos valores:')
+            console.log('Labels:')
+            console.log(labels)
+            console.log('Dados:')
+            console.log(dados.datasets)
+            console.log('----------------------------------------------') */
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
-                console.log(json);
-                console.log(JSON.stringify(json));
+            },
+        };
 
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById('Albuns'),
+            config
+        );
 
-            });
-
-        } else {
-            console.log("Houve um erro ao tentar realizar o login!");
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
+        //setTimeout(() => atualizarGrafico(dados, myChart), 2000);
+    }
     /* function exibirAquariosDoUsuario() {
        var aquarios = JSON.parse(sessionStorage.AQUARIOS);
        aquarios.forEach(item => {
@@ -76,7 +145,7 @@ window.onload = function () {
                </div>
            `
 
-           obterDadosGrafico(item.id)
+           obterDadosGraficoAlbum(item.id)
        });
 
        if (aquarios.length > 0) {
@@ -123,17 +192,17 @@ window.onload = function () {
    }
 
    // O gráfico é construído com três funções:
-   // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+   // 1. obterDadosGraficoMusica -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
 
-   // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+   // Esta função *obterDadosGraficoMusica* busca os últimos dados inseridos em tabela de medidas.
    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-   // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+   // A função *obterDadosGraficoMusica* também invoca a função *plotarGrafico*
 
    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
    //     Para ajustar o "select", ajuste o comando sql em src/models
-   function obterDadosGrafico() {
+   function obterDadosGraficoMusica() {
 
 
        if (proximaAtualizacao != undefined) {
@@ -142,8 +211,8 @@ window.onload = function () {
 
        fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
            if (response.ok) {
-               response.json().then(function (resposta) {
-                   console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+               response.json().then(function (tituloAlbum, qtdVotosAlbum) {
+                   console.log(`Dados recebidos: ${JSON.stringify(tituloAlbum, qtdVotosAlbum)}`);
                    resposta.reverse();
 
                    plotarGrafico(resposta);
@@ -188,7 +257,7 @@ window.onload = function () {
        };
 
        console.log('----------------------------------------------')
-       console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+       console.log('Estes dados foram recebidos pela funcao "obterDadosGraficoMusica" e passados para "plotarGrafico":')
        console.log(resposta)
 
        // Inserindo valores recebidos em estrutura para plotar o gráfico

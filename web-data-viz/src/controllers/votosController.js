@@ -2,11 +2,11 @@ var votoModel = require("../models/votoModel");
 
 function buscarAlbum(req, res) {
 
-    var idAquario = req.params.idAquario;
 
     console.log(`Buscando álbum favorito`);
 
     votoModel.buscarAlbum().then(function (resultado) {
+        console.log(resultado,"AQUI")
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

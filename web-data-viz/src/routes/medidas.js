@@ -3,7 +3,7 @@ var router = express.Router();
 
 var votosController = require("../controllers/votosController");
 
-router.get("/ultimas/:idAquario", function (req, res) {
+router.get("/ultimas", function (req, res) {
     votosController.buscarAlbum(req, res);
 });
 

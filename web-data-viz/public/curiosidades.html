@@ -17,62 +17,30 @@
   <div class="carrossel">
     <h1> Curiosidades sobre o Bring Me The Horizon</h1>
     <div class="slide">
-      <img src="./images/1129997.jpg" alt="" class="carrossel_img">
+      <img src="./images/1129997.jpg" alt="" class="curiosidades_img">
       <p class="texto"> O nome da banda foi inspirado pelo filme Piratas do Caribe: A Maldição do Pérola Negra (2003)
         onde na versão original, o capitão Jack Sparrow diz "Now bring me the horizon"</p>
     </div>
 
     <div class="slide">
-      <img src="./images/knotfest-brasil-2024.webp" alt="" class="carrossel_img">
+      <img src="./images/knotfest-brasil-2024.webp" alt="" class="curiosidades_img">
       <p class="texto">Em 2022, a banda abriu o show do Slipknot no festival knotfest</p>
     </div>
 
     <div class="slide">
-      <img src="./images/Oliver-Sykes-Bring-Me-the-Horizon-Sao-Paulo-2022-02.jpg" alt="" class="carrossel_img">
+      <img src="./images/Oliver-Sykes-Bring-Me-the-Horizon-Sao-Paulo-2022-02.jpg" alt="" class="curiosidades_img">
       <p class="texto"> Embora o vocalista, Oliver Sykes tenha nascido em Sheffield - Inglaterra, ele adquiriu cidadania
         brasileira em 2021, após se casar com a brasileira Alissa Salls. Ele já morou em Taubataté, cidade do interior
         de
         São Paulo - SP</p>
     </div>
-    <div class="botoes">
-      <button onclick="avancar()">➡️</button>
-      <button onclick="voltar()">⬅️</button>
     </div>
   </div>
   <div class="footer"></div>
   </div>
 </body>
 <script>
-    var slideAtual = 0;
-    const slides = document.querySelectorAll('.slide');
 
-    function mostrarSlide(index) {
-    if (index >= slides.length) {
-      slideAtual = 0;
-    } else if (index < 0) {
-      slideAtual = slides.length - 1;
-    } else {
-      slideAtual = index;
-    }
-
-    // Esconde todos os slides
-    slides.forEach((slide, i) => {
-      slide.style.display = i === slideAtual ? 'block' : 'none';
-    });
-  }
-
-    function avancar() {
-      mostrarSlide(slideAtual + 1);
-  }
-
-    function voltar() {
-      mostrarSlide(slideAtual - 1);
-  }
-
-    // Mostra o primeiro slide ao carregar a página
-    window.onload = function () {
-      mostrarSlide(slideAtual);
-  }
 </script>
 
 </script>

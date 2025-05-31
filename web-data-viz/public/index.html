@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="./images/1810034-Photoroom.png">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="body_curiosidades">
     <header>
         <img src="./images/heart love Sticker by Bring Me The Horizon (1).gif" alt="" class="logo">
@@ -16,18 +17,23 @@
         <a href="login.html">Login</a>
     </header>
     <div class="div_mae">
+        <h3>Sorteie uma música e um álbum para conhecer</h3>
+        <p>Clique nos botões abaixo</p>
         <div class="div_sorteioalbum">
             <button onclick="sortearAlbum()" class="botao_index">Sortear Album</button>
             <div id="album_container" class="album_container_escondido">
+                <div class="quadrado_img" id="img_div"></div>
                 <h2 id="titulo"></h2>
-                <div class="quadrado_img" id="img_div">
-                </div>
+                <p id="descricao"></p>
+                <p id="genero"></p>
+
             </div>
         </div>
-        <div class="div_sorteioMusica">
-            <button onclick="sortearMusica()" class="botao_index">Sortear Música</button>
-            <div id="video_musica_sorteada"></div>
-        </div>
+    </div>
+    <div class="div_sorteioMusica">
+        <button onclick="sortearMusica()" class="botao_index">Sortear Música</button>
+        <div id="video_musica_sorteada"></div>
+    </div>
     </div>
     <div class="footer"></div>
     </div>
@@ -35,19 +41,61 @@
 <script>
     function sortearAlbum() {
         var albuns = [
-            { título: 'Sempiternal', imagem: "./images/sempiternal.jpeg", descricao: "Sempiternal é o quarto álbum da banda, lançado em 1 de abril de 2013. O álbum conta com "},
-            { título: 'Amo', imagem: "./images/amo.jpeg", descricao: "" },
-            { título: 'Thats The Spirit', imagem: "./images/thatsTheSpirit.jpg", descricao: "" },
-            { título: 'Post Human: Nex Gen', imagem: "./images/nextgen2.jpeg", descricao: "" },
-            { título: 'Post Human: Survival Horror', imagem: "./images/survivalHorror.jpg", descricao: "" },
-            { título: 'Count Your Blessings', imagem: "./images/countYourBlessings.jpeg", descricao: "" },
-            { título: 'Suicide Season', imagem: "./images/suicideSeason.jpeg", descricao: "" },
-            { título: 'There Is A Hell, Believe Me Ive Seen It. There Is A Heaven, Lets Keep It A Secret', imagem: "./images/theresAHell.jpg", descricao: "" }
+            {
+                título: 'Sempiternal',
+                imagem: "./images/sempiternal.jpeg",
+                descricao: "Sempiternal é o quarto álbum da banda Bring Me The Horizon, lançado em 1 de abril de 2013. O álbum conta com 11 faixas, 4 faixas sendo singles: Shadow Moses, Sleepwalking, Go to Hell, for Heaven's Sake e Can You Feel My Heart",
+                genero: "Metalcore"
+            },
+            {
+                título: 'Amo',
+                imagem: "./images/amo.jpeg",
+                descricao: "Amo é o sexto álbum da banda Bring Me The Horizon, lançado em 11 de janeiro de 2019. O álbum conta com 13 faixas, 5 faixas sendo singles: MANTRA, Medicine, mother tongue, Nihilist Blues e Wonderful Life",
+                genero: "Rock Alternativo"
+            },
+            {
+                título: 'Thats The Spirit',
+                imagem: "./images/thatsTheSpirit.jpg",
+                descricao: "Thats The Spirit é o quinto álbum da banda Bring Me The Horizon, lançado em 11 de setembro de 2015. O álbum conta com 11 faixas, 6 faixas sendo singles: Drown, Happy Song, Throne, True Friends, Follow You e Avalanche",
+                genero: "Metalcore"
+            },
+            {
+                título: 'Post Human - Nex Gen',
+                imagem: "./images/nextgen2.jpeg",
+                descricao: "Post Human: Nex Gen é o sétimo álbum da banda Bring Me The Horizon, lançado em 24 de maio de 2024. O álbum conta com 11 faixas, 7 faixas sendo singles: Amen!, Darkside, Kool-Aid, Top 10 Statues That Cried Blood, Lost, Strangers e Die4U",
+                genero: "Nu Metal/Pop"
+            },
+            {
+                título: 'Post Human - Survival Horror',
+                imagem: "./images/survivalHorror.jpg",
+                descricao: "Post Human: Survival Horror é o sexto álbum da banda Bring Me The Horizon, lançado em 30 de outubro de 2020. O álbum conta com 9 faixas, 4 faixas sendo singles: Ludens, Obey, Teardrops e Parasite Eve",
+                genero: "Metalcore"
+            },
+            {
+                título: 'Count Your Blessings',
+                imagem: "./images/countYourBlessings.jpeg",
+                descricao: "Count Your Blessings é o primeiro álbum da banda Bring Me The Horizon, lançado em 30 de outubro de 2006. O álbum conta com 9 faixas, 2 faixas sendo singles: Pray For Plagues e For Stevie Wonders Eyes Only",
+                genero: "DeathMetal"
+            },
+            {
+                título: 'Suicide Season',
+                imagem: "./images/suicideSeason.jpeg",
+                descricao: "Suicide Season é o segundo álbum da banda Bring Me The Horizon, lançado em 29 de setembro de 2008. O álbum conta com 10 faixas, 3 faixas sendo singles: Chelsea Smile e Diamonds Arent Forever e The Sadness Will Never End",
+                genero: "Deathcore"
+            },
+            {
+                título: 'There Is A Hell, Believe Me Ive Seen It. There Is A Heaven, Lets Keep It A Secret',
+                imagem: "./images/theresAHell.jpg",
+                descricao: "There Is A Hell, Believe Me Ive Seen It. There Is A Heaven, Lets Keep It A Secret é o terceiro álbum da banda Bring Me The Horizon, lançado em 4 de outubro de 2010. O álbum conta com 12 faixas, 2 faixas sendo singles: It Never Ends e Blessed With a Curse",
+                genero: "Metalcore"
+            }
         ]
         var albumAleatorio = Math.floor(Math.random() * albuns.length);
         var albumSorteado = albuns[albumAleatorio]
         titulo.innerHTML = `Álbum: ${albumSorteado.título}`
         img_div.innerHTML = `<img src="${albumSorteado.imagem}" alt="${albumSorteado.titulo}" class="imagem_album">`
+        descricao.innerHTML = `Descrição: ${albumSorteado.descricao}`
+        genero.innerHTML = `Gênero: ${albumSorteado.genero}`
 
 
     }

@@ -31,7 +31,7 @@ body {
   width: 100vw;
 }
 
-.div_img {
+.div_img_cadastro {
   background-image: url(./images/SRmgTmx.jpg);
   width: 75vw;
   height: 100vh;
@@ -40,6 +40,16 @@ body {
   background-repeat: no-repeat;
   text-align: center;
   display: flex;
+  justify-content: center;
+}
+
+.div_img_login {
+  background-image: url(./images/92fe028a28d04ad8620b0cbb8822e0ff.jpg);
+  width: 75vw;
+  height: 100vh;
+  background-position: center;
+  display: flex;
+  background-size: contain;
   justify-content: center;
 }
 
@@ -115,7 +125,9 @@ button {
 .botao_cadastro:hover {
   background-color: #76100b;
 }
-
+.botao_login:hover{
+  background-color: #272727;
+}
 a {
   color: #ffffff;
   text-decoration: none;

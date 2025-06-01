@@ -2,31 +2,31 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Bring Me The Horizon BR | Login</title>
-  <link rel="icon" type="image/gif" href="./images/favicon.png">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bring Me The Horizon BR | Login</title>
+    <link rel="icon" type="image/gif" href="./images/favicon.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="container">
-      <div class="div_img">
-      </div>
-      <div class="cadastro">
-        <h1>Faça Login</h1>
-        <p>Preencha o formulário</p>
-        <div class="caixa_input">
-          <input type="text" id="ipt_cadastro_email" placeholder="Email" required class="input">
-          <input type="password" id="ipt_cadastro_senha" placeholder="Senha" required class="input">
-          <br>
-          <button onclick="entrar()" class="botao_cadastro">ENTRAR</button>
+        <div class="div_img_login">
         </div>
-      </div>
+        <div class="cadastro">
+            <h1>Faça Login</h1>
+            <p>Preencha o formulário</p>
+            <div class="caixa_input">
+                <input type="text" id="ipt_cadastro_email" placeholder="Email" required class="input">
+                <input type="password" id="ipt_cadastro_senha" placeholder="Senha" required class="input">
+                <br>
+                <button onclick="entrar()" class="botao_login">ENTRAR</button>
+            </div>
+        </div>
     </div>
 </body>
 <script>
-  function entrar() {
+    function entrar() {
         var email = ipt_cadastro_email.value;
         var senha = ipt_cadastro_senha.value;
         if (email == "" || senha == "") {
@@ -73,7 +73,6 @@
 
         return false;
     }
-
 </script>
 
 </html>

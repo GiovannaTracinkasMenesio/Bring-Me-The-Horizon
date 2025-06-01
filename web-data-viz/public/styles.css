@@ -17,6 +17,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 40px;
+  background-image: url(./images/760cc6d07d1fd91b66004834dde5cfee.jpg);
 }
 
 .container {
@@ -92,7 +94,7 @@ input {
   border: none;
   font-family: "Roboto Flex", sans-serif;
   border-radius: 5px;
-  border: solid 1px #4b4b4b;
+  border: solid 1px #5a5a5a;
 }
 
 button {
@@ -171,21 +173,27 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
-  width: 90%;
+  background-color: #f2f2f2;
+  width: 70vw;
   justify-content: center;
   padding: 25px;
-  border: 1px solid #000000;
+  border: 1px solid #c4c4c4;
+  margin-top: 50px;
+  border-radius: 15px;
+  gap: 20px;
 }
 
 .box {
   display: flex;
   flex-direction: row;
+  gap: 20px;
 }
+
 
 .curiosidades_img {
   height: 300px;
   width: 500px;
+  border-radius: 10px;
 }
 
 
@@ -324,11 +332,13 @@ li {
   text-align: center;
   background-color: #f2f2f2;
 }
+
 #kpiAlbum h2 {
-margin-top: 15px;
+  margin-top: 15px;
 }
+
 #kpiMusica h2 {
-margin-top: 15px;
+  margin-top: 15px;
 }
 
 #kpiMusica {
@@ -348,7 +358,16 @@ margin-top: 15px;
   padding: 3px;
   gap: 10px;
 }
-.label_{
+
+.label_ {
   font-weight: 500;
   font-size: large;
+}
+
+.div_texto_curiosidades {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

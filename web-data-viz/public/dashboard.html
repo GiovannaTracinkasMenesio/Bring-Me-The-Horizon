@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,43 +23,42 @@
         </div>
     </header>
     <div id="div_select_option">
-        <div class="div_select">
-            <label class="label_">Vote em seu album favorito:</label>
+        <div id="div_select_album">
+            <label>Vote em seu album favorito:</label>
             <select id="select_album">
-                <option value="Sempiternal">Sempiternal</option>
-                <option value="Amo">Amo</option>
-                <option value="SurivalHorror">Post Human: Survival Horror</option>
-                <option value="NexGen">Post Human: Nex Gen</option>
-                <option value="SuicideSeason">Suicide Season</option>
-                <option value="CountYourBlessings">Count Your Blessings</option>
-                <option value="theresAHell">Theres A Hell</option>
-                <option value="ThatsTheSpirit">Thats The Spirit</option>
+                <option value="1">Sempiternal</option>
+                <option value="2">Amo</option>
+                <option value="3">Post Human: Survival Horror</option>
+                <option value="4">Post Human: Nex Gen</option>
+                <option value="7">Suicide Season</option>
+                <option value="8">Count Your Blessings</option>
+                <option value="6">Theres A Hell</option>
+                <option value="5">Thats The Spirit</option>
             </select>
-
         </div>
-        <div class="div_select">
-            <label class="label_">Vote em seu single favorito:</label>
-            <select id="select_musica">
-                <option value="CanYouFeelMyHeart">Can You Feel My Heart</option>
-                <option value="BlessedWithACurse">Blessed With A Curse</option>
-                <option value="Doomed">Doomed</option>
-                <option value="ShadowMoses">Shadow Moses</option>
-                <option value="Teardrops">Teardrops</option>
-                <option value="Mantra">Mantra</option>
-                <option value="KoolAid">Kool-Aid</option>
-                <option value="Drown">Drown</option>
-                <option value="PrayForPlagues">Pray For Plagues</option>
-                <option value="Throne">Throne</option>
-                <option value="ChelseaSmile">Chelsea Smile</option>
-            </select>
-
-            <button onclick="enviarVoto()" id="botao_select">Votar</button>
+        <div>
+            
         </div>
+        <label>Vote em seu single favorito:</label>
+        <select id="select_musica">
+            <option value="1">Can You Feel My Heart</option>
+            <option value="3">Blessed With A Curse</option>
+            <option value="7">Doomed</option>
+            <option value="2">Shadow Moses</option>
+            <option value="4">Teardrops</option>
+            <option value="5">Mantra</option>
+            <option value="6">Kool-Aid</option>
+            <option value="9">Drown</option>
+            <option value="10">Pray For Plagues</option>
+            <option value="8">Throne</option>
+            <option value="11">Chelsea Smile</option>
+        </select>
+        <button onclick="enviarVoto()">Votar</button>
     </div>
 
     <div id="div_kpis">
-        <div id="kpiAlbum"></div>
         <div id="kpiMusica"></div>
+        <div id="kpiAlbum"></div>
     </div>
     <h1>Dashboard</h1>
     <div class="div_canvas">
@@ -280,4 +280,4 @@
         });
 </script>
 
-</html>
+</html> 

@@ -4,35 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Sortear Album e Música| Bring Me The Horizon BR </title>
-    <link rel="icon" type="image/png" href="./images/1810034-Photoroom.png">
+    <title> Sortear Album e Música | Bring Me The Horizon BR </title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="body_curiosidades">
+<body>
     <header>
-        <img src="./images/heart love Sticker by Bring Me The Horizon (1).gif" alt="" class="logo">
-        <h4 class="logo_texto">Bring Me The Horizon Brasil</h4>
-        <a href="cadastro.html">Cadastre-se</a>
-        <a href="login.html">Login</a>
+        <div class="div_logo_site"> 
+            <img src="./images/heart love Sticker by Bring Me The Horizon (1).gif" alt="" class="logo">
+            <p class="logo_texto">Bring Me The Horizon Brasil</p>
+        </div>
+        <div class="links_header">
+            <a href="curiosidades.html">Curiosidades</a>
+            <a href="cadastro.html">Cadastre-se</a>
+            <a href="login.html">Login</a>
+        </div>
     </header>
+    <div id="div_titulo">
+        <h2>Sorteie uma música e um álbum para conhecer</h2>
+        <h4>Clique nos botões abaixo</h4>
+    </div>
     <div class="div_mae">
-        <h3>Sorteie uma música e um álbum para conhecer</h3>
-        <p>Clique nos botões abaixo</p>
         <div class="div_sorteioalbum">
-            <button onclick="sortearAlbum()" class="botao_index">Sortear Album</button>
-            <div id="album_container" class="album_container_escondido">
+            <div id="album_container" class="album_container">
                 <div class="quadrado_img" id="img_div"></div>
                 <h2 id="titulo"></h2>
-                <p id="descricao"></p>
-                <p id="genero"></p>
-
+                <br>
+                <p id="descricao" class="texto"></p>
+                <br>
+                <p id="genero" class="texto"></p>
             </div>
+            <button onclick="sortearAlbum()" class="botao_index">Sortear Album</button>
         </div>
-    </div>
-    <div class="div_sorteioMusica">
-        <button onclick="sortearMusica()" class="botao_index">Sortear Música</button>
-        <div id="video_musica_sorteada"></div>
+        <div class="div_sorteioMusica">
+            <div id="video_musica_sorteada"></div>
+            <button onclick="sortearMusica()" class="botao_index">Sortear Música</button>
+        </div>
+
     </div>
     </div>
     <div class="footer"></div>
@@ -80,7 +89,7 @@
             {
                 título: 'Suicide Season',
                 imagem: "./images/suicideSeason.jpeg",
-                descricao: "Suicide Season é o segundo álbum da banda Bring Me The Horizon, lançado em 29 de setembro de 2008. O álbum conta com 10 faixas, 3 faixas sendo singles: Chelsea Smile e Diamonds Arent Forever e The Sadness Will Never End",
+                descricao: "Suicide Season é o segundo álbum da banda Bring Me The Horizon, lançado em 29 de setembro de 2008. O álbum conta com 10 faixas, 3 faixas sendo singles: Chelsea Smile, Diamonds Arent Forever e The Sadness Will Never End",
                 genero: "Deathcore"
             },
             {
@@ -94,8 +103,8 @@
         var albumSorteado = albuns[albumAleatorio]
         titulo.innerHTML = `Álbum: ${albumSorteado.título}`
         img_div.innerHTML = `<img src="${albumSorteado.imagem}" alt="${albumSorteado.titulo}" class="imagem_album">`
-        descricao.innerHTML = `Descrição: ${albumSorteado.descricao}`
-        genero.innerHTML = `Gênero: ${albumSorteado.genero}`
+        descricao.innerHTML = `<strong> Descrição: </strong> ${albumSorteado.descricao}`
+        genero.innerHTML = `<strong> Gênero: </strong> ${albumSorteado.genero}`
 
 
     }

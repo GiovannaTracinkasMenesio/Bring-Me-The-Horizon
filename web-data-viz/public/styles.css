@@ -272,3 +272,83 @@ li {
   font-size: medium;
   padding: 30px;
 }
+
+#body_dashboard {
+  padding: 35px;
+}
+
+#div_select_option {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.div_select {
+  width: 50vw;
+  justify-items: center;
+  align-items: center;
+}
+
+#botao_select {
+  padding: 15px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.div_canvas {
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+#div_album {
+  height: 100%;
+  width: 50vw;
+}
+
+#div_musica {
+  height: 100%;
+  width: 50vw;
+}
+
+#kpiAlbum {
+  width: 50%;
+  border-radius: 20px;
+  border: 1px solid #c2c2c2;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+#kpiAlbum h2 {
+margin-top: 15px;
+}
+#kpiMusica h2 {
+margin-top: 15px;
+}
+
+#kpiMusica {
+  width: 50%;
+  border-radius: 20px;
+  border: 1px solid #c2c2c2;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+#div_kpis {
+  margin-top: 20px;
+  width: 100vw;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  padding: 3px;
+  gap: 10px;
+}
+.label_{
+  font-weight: 500;
+  font-size: large;
+}

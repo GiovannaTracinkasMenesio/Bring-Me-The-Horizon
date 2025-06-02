@@ -375,7 +375,10 @@
 </body>
 <script>
     function comecar() {
-        var respostaDigitada = resposta.value;
+        var respostasCertas = ['OLIVER', 'COUNT YOR BLESSINGS', 'SHEFFIELD', 'DROP DEAD', 'PIRATAS DO CARIBE', 'SYKES', 'LEE', 'LIMOUSINE', 'SURVIVAL HORROR', 'POST HUMAN: SURVIVAL HORROR', 'SEMPITERNAL'];
+        var qtdErros = 0;
+        var respostasTotais = [respostaDigitada]
+        var respostaDigitada = respostasTotais.value
         var respostaConvertida = respostaDigitada.toUpperCase();
         if (respostaConvertida == 'OLIVER') {
             l2q3.innerHTML = "O";
@@ -491,6 +494,9 @@
             l6q10.innerHTML = 'N';
             l6q11.innerHTML = 'A';
             l6q12.innerHTML = 'L';
+        } else {
+            qtdErros++;
+            alert(`Quantidade de Erros: ${qtdErros}`)
         }
     }
 </script>

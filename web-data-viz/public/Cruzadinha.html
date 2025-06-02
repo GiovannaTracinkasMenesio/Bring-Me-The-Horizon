@@ -375,7 +375,6 @@
 </body>
 <script>
     function comecar() {
-        var qtdErros = 0;
         var respostaDigitada = resposta.value
         var respostaConvertida = respostaDigitada.toUpperCase();
         if (respostaConvertida == 'OLIVER') {
@@ -493,8 +492,7 @@
             l6q11.innerHTML = 'A';
             l6q12.innerHTML = 'L';
         } else {
-            qtdErros++;
-            alert(`Quantidade de Erros: ${qtdErros}`)
+            alert('Tente novamente')
         }
     }
 </script>

@@ -374,6 +374,7 @@
 
 </body>
 <script>
+    var qtdErros = 0;
     function comecar() {
         var respostaDigitada = resposta.value
         var respostaConvertida = respostaDigitada.toUpperCase();
@@ -492,7 +493,8 @@
             l6q11.innerHTML = 'A';
             l6q12.innerHTML = 'L';
         } else {
-            alert('Tente novamente')
+            qtdErros++;
+            alert(`Tente novamente. Tentativa número : ${qtdErros}`)
         }
     }
 </script>

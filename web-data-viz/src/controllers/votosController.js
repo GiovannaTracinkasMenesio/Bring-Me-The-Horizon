@@ -2,11 +2,10 @@ var votoModel = require("../models/votoModel");
 
 function buscarAlbum(req, res) {
 
-
     console.log(`Buscando álbum favorito`);
 
     votoModel.buscarAlbum().then(function (resultado) {
-        console.log(resultado,"AQUI")
+        console.log(resultado)
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -22,11 +21,9 @@ function buscarAlbum(req, res) {
 
 function buscarMusica(req, res) {
 
-    var idAquario = req.params.idAquario;
-
     console.log(`Buscando música favorita`);
 
-    votoModel.buscarMusica(idAquario).then(function (resultado) {
+    votoModel.buscarMusica().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -38,9 +35,46 @@ function buscarMusica(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+function votar(req, res) {
+    const {album, musica, usuario } = req.body;
+
+    if (!album || !musica || !usuario) {
+        return res.status(400).send("Dados incompletos");
+    }
+
+    votoModel.votar(album, musica, usuario)
+        .then(() => res.status(200).send("Voto registrado com sucesso"))
+        .catch(erro => {
+            console.error("Erro ao registrar voto:", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+function kpiMusica(req, res) {
+    votoModel.musicaMaisVotada()
+        .then(resultado => {
+            res.json(resultado[0]); 
+        })
+        .catch(erro => {
+            console.error(erro);
+            res.status(500).send("Erro ao buscar música mais votada");
+        });
+}
+
+function kpiAlbum(req, res) {
+    votoModel.albumMaisVotado()
+        .then(resultado => {
+            res.json(resultado[0]); 
+        })
+        .catch(erro => {
+            console.error(erro);
+            res.status(500).send("Erro ao buscar álbum mais votado");
+        });
+}
 
 module.exports = {
     buscarAlbum,
-    buscarMusica
-
+    buscarMusica,
+    votar,
+    kpiAlbum,
+    kpiMusica
 }
